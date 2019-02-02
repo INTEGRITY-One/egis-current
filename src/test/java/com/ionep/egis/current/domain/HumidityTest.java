@@ -20,4 +20,15 @@ public class HumidityTest {
 		assertEquals(30, humidity.getHumid());
 	}
 
+	@Test
+	public void from() throws Exception {
+		Humidity humidity = new Humidity();
+		humidity.setHumid(30);
+		Humidity copy = new Humidity();
+		copy.setHumid(70);
+		assertEquals(70, copy.getHumid());
+		copy.from(humidity);
+		assertEquals(30, copy.getHumid());
+	}
+
 }

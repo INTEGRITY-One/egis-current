@@ -20,4 +20,15 @@ public class PrecipitationTest {
 		assertEquals(2, precipitation.getPrecip());
 	}
 
+	@Test
+	public void from() throws Exception {
+		Precipitation precipitation = new Precipitation();
+		precipitation.setPrecip(2);
+		Precipitation copy = new Precipitation();
+		copy.setPrecip(1);
+		assertEquals(1, copy.getPrecip());
+		copy.from(precipitation);
+		assertEquals(2, copy.getPrecip());
+	}
+
 }

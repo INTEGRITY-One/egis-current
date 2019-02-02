@@ -20,4 +20,15 @@ public class PressureTest {
 		assertEquals(30, pressure.getPress());
 	}
 
+	@Test
+	public void from() throws Exception {
+		Pressure pressure = new Pressure();
+		pressure.setPress(30);
+		Pressure copy = new Pressure();
+		copy.setPress(28);
+		assertEquals(28, copy.getPress());
+		copy.from(pressure);
+		assertEquals(30, copy.getPress());
+	}
+
 }

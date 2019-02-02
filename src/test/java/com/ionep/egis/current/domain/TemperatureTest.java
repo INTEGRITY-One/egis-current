@@ -20,4 +20,15 @@ public class TemperatureTest {
 		assertEquals(72, temperature.getTemp());
 	}
 
+	@Test
+	public void from() throws Exception {
+		Temperature temperature = new Temperature();
+		temperature.setTemp(72);
+		Temperature copy = new Temperature();
+		copy.setTemp(32);
+		assertEquals(32, copy.getTemp());
+		copy.from(temperature);
+		assertEquals(72, copy.getTemp());
+	}
+
 }

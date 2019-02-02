@@ -14,9 +14,6 @@ public class DateDimension {
 	
 	private long id;
 	
-//	@NonNull
-//	private LocalDateTime timestamp;
-//	
 	@NonNull
 	private String date;
 	
@@ -42,7 +39,6 @@ public class DateDimension {
 	}
 	
 	public DateDimension(LocalDateTime timestamp) {
-//		this.timestamp = timestamp;
 		this.date = DateTimeFormatter.BASIC_ISO_DATE.format(timestamp);
 		this.hour = String.format("%02d", timestamp.getHour());
 		this.month = timestamp.getMonth().getDisplayName(TextStyle.SHORT, Locale.US).toUpperCase();
@@ -53,7 +49,6 @@ public class DateDimension {
 	}
 	
 	public DateDimension from(DateDimension date) {
-//		this.timestamp = date.timestamp;
 		this.date = date.date;
 		this.hour = date.hour;
 		this.month = date.month;
@@ -64,14 +59,6 @@ public class DateDimension {
 		return this;
 	}
 
-//	public LocalDateTime getTimestamp() {
-//		return this.timestamp;
-//	}
-//
-//	public void setTimestamp(LocalDateTime timestamp) {
-//		this.timestamp = timestamp;
-//	}
-//
 	public String getDate() {
 		return this.date;
 	}

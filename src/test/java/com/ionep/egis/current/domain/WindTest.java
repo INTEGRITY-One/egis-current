@@ -16,9 +16,9 @@ public class WindTest {
 	@Test
 	public void speedAndDirection() throws Exception {
 		Wind wind = new Wind();
-		wind.setDirection(WindDirection.EAST);
+		wind.setDir(WindDirection.EAST.ordinal());
 		wind.setSpeed(5);
-		assertEquals(WindDirection.EAST, wind.getDirection());
+		assertEquals(WindDirection.EAST.ordinal(), wind.getDir());
 		assertEquals(5, wind.getSpeed());
 	}
 

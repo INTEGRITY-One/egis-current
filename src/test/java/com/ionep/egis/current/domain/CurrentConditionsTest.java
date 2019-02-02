@@ -22,8 +22,10 @@ public class CurrentConditionsTest {
 		Humidity humidity = new Humidity();
 		humidity.setHumid(30);
 		Cloudiness cloudiness = Cloudiness.CLEAR;
+		CloudConditions cloudConditions = new CloudConditions();
+		cloudConditions.setCloudiness(cloudiness.ordinal());
 		Wind wind = new Wind();
-		wind.setDirection(WindDirection.EAST);
+		wind.setDir(WindDirection.EAST.ordinal());
 		wind.setSpeed(5);
 		Pressure pressure = new Pressure();
 		pressure.setPress(30);
@@ -31,13 +33,13 @@ public class CurrentConditionsTest {
 		conditions.setTemperature(temperature);
 		conditions.setPrecipitation(precipitation);
 		conditions.setHumidity(humidity);
-		conditions.setCloudiness(cloudiness);
+		conditions.setCloudConditions(cloudConditions);
 		conditions.setWind(wind);
 		conditions.setPressure(pressure);
 		assertEquals(temperature, conditions.getTemperature());
 		assertEquals(precipitation, conditions.getPrecipitation());
 		assertEquals(humidity, conditions.getHumidity());
-		assertEquals(cloudiness, conditions.getCloudiness());
+		assertEquals(cloudConditions, conditions.getCloudConditions());
 		assertEquals(wind, conditions.getWind());
 		assertEquals(pressure, conditions.getPressure());
 	}

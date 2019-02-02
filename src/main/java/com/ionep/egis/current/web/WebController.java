@@ -52,13 +52,4 @@ public class WebController {
 		this.futures.get(city).cancel(true);
 	}
 
-	@RequestMapping(
-			value = "current",
-			params = {"city", "command"},
-			method = RequestMethod.POST
-	)
-	public void suspendOrResult(@RequestParam("city") String city, @RequestParam("command") String command) throws Exception {
-		log.info("city: " + city + ", command: " + command);
-	}
-
 }
